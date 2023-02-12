@@ -2,6 +2,7 @@
 
 namespace Fnp\Acl;
 
+use Fnp\Acl\Interfaces\AclAction;
 use Fnp\Acl\Interfaces\AclResource;
 use Fnp\Acl\Resources\Itself;
 use http\Params;
@@ -57,6 +58,11 @@ class CanResourceHelper
     public function be(): CanBeHelper
     {
         return new CanBeHelper($this->resource);
+    }
+
+    public function perform(AclAction $action): bool
+    {
+        return $action->canBePerformedBy($this->resource);
     }
 
     public function create(AclResource $resource): bool
