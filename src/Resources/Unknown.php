@@ -4,7 +4,7 @@ namespace Fnp\Acl\Resources;
 
 use Fnp\Acl\Interfaces\AclResource;
 
-class Itself implements AclResource
+class Unknown implements AclResource
 {
     public function canBeCreatedBy(AclResource $resource): bool
     {

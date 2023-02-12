@@ -4,14 +4,28 @@ namespace Fnp\Acl;
 
 use Fnp\Acl\Interfaces\AclAction;
 use Fnp\Acl\Interfaces\AclResource;
-use Fnp\Acl\Resources\Itself;
-use http\Params;
+use Fnp\Acl\Resources\Unknown;
 
 class Can
 {
     public static function resource(AclResource $resource): CanResourceHelper
     {
         return new CanResourceHelper($resource);
+    }
+
+    public static function action(AclAction $action): CanActionHelper
+    {
+        return new CanActionHelper($action);
+    }
+}
+
+class CanActionHelper
+{
+    private AclAction $action;
+
+    public function bePerformed(): bool
+    {
+        return $this->action->canBePerformedBy(new Unknown());
     }
 }
 
@@ -26,22 +40,22 @@ class CanBeHelper
 
     public function created(): bool
     {
-        return $this->resource->canBeCreatedBy(new Itself());
+        return $this->resource->canBeCreatedBy(new Unknown());
     }
 
     public function read(): bool
     {
-        return $this->resource->canBeReadBy(new Itself());
+        return $this->resource->canBeReadBy(new Unknown());
     }
 
     public function updated(): bool
     {
-        return $this->resource->canBeUpdatedBy(new Itself());
+        return $this->resource->canBeUpdatedBy(new Unknown());
     }
 
     public function deleted(): bool
     {
-        return $this->resource->canBeDeletedBy(new Itself());
+        return $this->resource->canBeDeletedBy(new Unknown());
     }
 }
 
