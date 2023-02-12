@@ -1,6 +1,6 @@
 <?php
 
-namespace Fnp\Acl\Interfaces;
+namespace Fnp\Acl\Contracts;
 
 interface AclAction
 {

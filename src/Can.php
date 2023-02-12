@@ -2,8 +2,8 @@
 
 namespace Fnp\Acl;
 
-use Fnp\Acl\Interfaces\AclAction;
-use Fnp\Acl\Interfaces\AclResource;
+use Fnp\Acl\Contracts\AclAction;
+use Fnp\Acl\Contracts\AclResource;
 use Fnp\Acl\Resources\Unknown;
 
 class Can

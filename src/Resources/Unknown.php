@@ -2,7 +2,7 @@
 
 namespace Fnp\Acl\Resources;
 
-use Fnp\Acl\Interfaces\AclResource;
+use Fnp\Acl\Contracts\AclResource;
 
 class Unknown implements AclResource
 {
