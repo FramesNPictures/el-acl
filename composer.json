@@ -1,0 +1,19 @@
+{
+  "name": "framesnpictures/el-acl",
+  "description": "Simple ACL for Laravel",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Chris Cynarski",
+      "email": "chris@cynarski.net"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Fnp\\Acl\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=8.1"
+  }
+}
