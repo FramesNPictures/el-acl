@@ -4,5 +4,5 @@ namespace Fnp\Acl\Contracts;
 
 interface AclAction
 {
-    public function canBePerformedBy(AclResource $resource): bool;
+    public function canBePerformedBy(AclResourceRule $resource): bool;
 }

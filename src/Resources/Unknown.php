@@ -2,26 +2,26 @@
 
 namespace Fnp\Acl\Resources;
 
-use Fnp\Acl\Contracts\AclResource;
+use Fnp\Acl\Contracts\AclResourceRule;
 
-class Unknown implements AclResource
+class Unknown implements AclResourceRule
 {
-    public function canBeCreatedBy(AclResource $resource): bool
+    public function canBeCreatedBy(AclResourceRule $resource): bool
     {
         return false;
     }
 
-    public function canBeReadBy(AclResource $resource): bool
+    public function canBeReadBy(AclResourceRule $resource): bool
     {
         return false;
     }
 
-    public function canBeUpdatedBy(AclResource $resource): bool
+    public function canBeUpdatedBy(AclResourceRule $resource): bool
     {
         return false;
     }
 
-    public function canBeDeletedBy(AclResource $resource): bool
+    public function canBeDeletedBy(AclResourceRule $resource): bool
     {
         return false;
     }

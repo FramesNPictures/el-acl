@@ -4,6 +4,7 @@ namespace Fnp\Acl;
 
 use Fnp\Acl\Contracts\AclAction;
 use Fnp\Acl\Contracts\AclResource;
+use Fnp\Acl\Contracts\AclResourceRule;
 use Fnp\Acl\Resources\Unknown;
 
 class Can
@@ -31,7 +32,7 @@ class CanActionHelper
 
 class CanBeHelper
 {
-    private AclResource $resource;
+    private AclResourceRule $resource;
 
     public function __construct(AclResource $resource)
     {
@@ -62,9 +63,9 @@ class CanBeHelper
 
 class CanResourceHelper
 {
-    private AclResource $resource;
+    private AclResourceRule $resource;
 
-    public function __construct(AclResource $resource)
+    public function __construct(AclResourceRule $resource)
     {
         $this->resource = $resource;
     }
@@ -79,22 +80,22 @@ class CanResourceHelper
         return $action->canBePerformedBy($this->resource);
     }
 
-    public function create(AclResource $resource): bool
+    public function create(AclResourceRule $resource): bool
     {
         return $resource->canBeCreatedBy($this->resource);
     }
 
-    public function read(AclResource $resource): bool
+    public function read(AclResourceRule $resource): bool
     {
         return $resource->canBeReadBy($this->resource);
     }
 
-    public function update(AclResource $resource): bool
+    public function update(AclResourceRule $resource): bool
     {
         return $resource->canBeUpdatedBy($this->resource);
     }
 
-    public function delete(AclResource $resource): bool
+    public function delete(AclResourceRule $resource): bool
     {
         return $resource->canBeDeletedBy($this->resource);
     }
