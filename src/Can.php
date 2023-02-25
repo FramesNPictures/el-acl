@@ -32,7 +32,7 @@ class CanActionHelper
 
 class CanBeHelper
 {
-    private AclResourceRule $resource;
+    private AclResource $resource;
 
     public function __construct(AclResource $resource)
     {
