@@ -65,7 +65,7 @@ class CanResourceHelper
 {
     private AclResourceRule $resource;
 
-    public function __construct(AclResourceRule $resource)
+    public function __construct(AclResource $resource)
     {
         $this->resource = $resource;
     }
